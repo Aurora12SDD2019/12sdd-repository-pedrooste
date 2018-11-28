@@ -1,12 +1,13 @@
-""" Project name.
+""" Modules of Standard algorithm functions for the SDD course.
 
-Description
+This script will contain functions to all of the standard
+algorithims listed in the course specs for the HSC SDD course.
 """
 
-__author__ = "Your Name"
+__author__ = "Pedro Oste"
 __license__ = "GPL"
 __version__ = "1.0.1"
-__email__ = "your.address@education.nsw.com.au"
+__email__ = "pedro.oste@education.nsw.com.au"
 __status__ = "Prototype, Development or Production"
 
 """ revision notes:
@@ -17,24 +18,88 @@ __status__ = "Prototype, Development or Production"
 #include statements
 
 
-def function_name(arg1, arg2, other_silly_variable=None):
-    """Does something amazing.
+
+def loadArray(thisArray):
+    """appeneds data into an array.
+        
+        prompt the user to add data to the existing array
+    
+    Args:
+        thisArray: the array to which the data will be added
+    Returns:
+        the modified array
+    Raises:
+        none
+    """
+    
+    value = input("please entere some data or enter 'xxx' to quit ")
+    
+    while value != 'xxx':
+        thisArray.append(value)
+        value = input("please entere some data or enter 'xxx' to quit ")
+    print("there are now {} items loaded into the array".format(len(thisArray)))
+    return thisArray
+    
+
+
+def printArrayContents(thisArray):
+    """prints the contents within the array
 
     a much longer description of the really amazing stuff this function does and how it does it.
 
     Args:
-        arg1: the first argument required by the function.
-        arg2: the second argument required by the function.
-        other_silly_variable: Another optional variable, that has a much
-            longer name than the other args, and which does nothing.
-
+        thisArray: the array to be printed
+        
     Returns:
-        description of the stuff that is returned by the function.
+        none        
+    Raises:
+        none        
+        """
+    i = 0 #start at zero in python
+    while i < len(thisArray):
+        print(thisArray[i], end = ' ')
+        i = i + 1
+    print(' ')
+
+
+
+def sumArrayContents(thisArray):
+    """Sums the contents of the array
+
+    Args:
+        thisArray: The array that the contents will be added together        arg2: the second argument required by the function.
+        
+    Returns:
+        total: sum of the array
 
     Raises:
-        AnError: An error occurred running this function.
+        TypeError.
     """
-    pass
+    i = 0
+    total = 0
+    while i < len(thisArray):
+        try: 
+            total = total + eval(thisArray[i])
+            i = i + 1
+            
+        except TypeError:
+            print("you a dummie")
+            total = None
+            
+    print("the sum of the array is {}".format(total))
+    return total
+    
+
+
+
+
+
+
+
+
+
+
+
 
 class SampleClass(object):
     """Summary of class here.
@@ -55,4 +120,26 @@ class SampleClass(object):
         """Performs operation blah."""
 
 
+
+
+
+#copy
+def function_name(arg1, arg2, other_silly_variable=None):
+    """Does something amazing.
+
+    a much longer description of the really amazing stuff this function does and how it does it.
+
+    Args:
+        arg1: the first argument required by the function.
+        arg2: the second argument required by the function.
+        other_silly_variable: Another optional variable, that has a much
+            longer name than the other args, and which does nothing.
+
+    Returns:
+        description of the stuff that is returned by the function.
+
+    Raises:
+        AnError: An error occurred running this function.
+    """
+    pass
 
