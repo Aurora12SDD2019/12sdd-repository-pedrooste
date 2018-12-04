@@ -31,14 +31,14 @@ def loadArray(thisArray):
     Raises:
         none
     """
-    
+    outArray = thisArray[:]
     value = input("please entere some data or enter 'xxx' to quit ")
     
     while value != 'xxx':
-        thisArray.append(value)
+        outArray.append(value)
         value = input("please entere some data or enter 'xxx' to quit ")
     print("there are now {} items loaded into the array".format(len(thisArray)))
-    return thisArray
+    return outArray
     
 
 
@@ -90,7 +90,29 @@ def sumArrayContents(thisArray):
     return total
     
 
+def findMax(thisArray):
+    """Finds the maximum within the array.
 
+    Based off the psuedocode boi.
+
+    Args:
+        thisArray: this is the array that will be used to find the maximum
+    Returns:
+        the maximum and where to find the maximum within the array.
+
+    Raises:
+        
+    """
+    maxIndex = 1
+    i = 1
+    max = ''
+    while i < len(thisArray):
+        if thisArray[i] > max:
+            max = thisArray[i]
+            maxIndex = i
+        i = i + 1
+    print('The highest value is {} at position {}'.format(max,maxIndex))
+    pass
 
 
 

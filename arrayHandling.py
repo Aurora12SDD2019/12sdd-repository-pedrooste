@@ -24,13 +24,12 @@ from mods import *
 #now the real stuff we came here for
 def main():
     newArray = []
-    loadArray(newArray)
+    secondArray = loadArray(newArray)
+    
+    printArrayContents(secondArray)
     printArrayContents(newArray)
     arraySum = sumArrayContents(newArray)
-    
-    anotherArray = ['a','b','c']
-    loadArray(anotherArray)
-    printArrayContents(anotherArray)
+    findMax(secondArray)
     
 
 if __name__ == '__main__':
