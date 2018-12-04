@@ -1,1 +1,55 @@
 this is where you will write the pseudocode corresponding to the python code in mods.py
+This was edited in notepad ++
+
+BEGIN LoadArray
+  #load data into the array
+  Let i = 1
+  Read DataValue
+  
+  #If the user enters 'XXX' it means they have finished entering data
+  WHILE DataValue < > “xxx”    #the symbol '< >' means not equal to (exclusive to psuedo)
+    Let Element (i) = DataValue
+    i = i + 1
+    Read DataValue
+  ENDWHILE
+  Let NumElements = i
+  Display “ There are” NumElements “ items loaded into the array”
+END LoadArray
+
+
+BEGIN SumArrayContents(inputArray)
+  let i = 1
+  Let total = 0
+  WHILE i < NumElements in inputArray
+	let total  = Element(i) + total
+	i = i + 1
+  ENDWHILE
+  Display “ The sum of all of the elements in the array = ” total
+  return(inputArray)
+END SumArrayContents
+
+
+BEGIN PrintArrayContents(inputArray)
+  let i = 1
+  WHILE i < NumElements in inputArray
+    Display inputArray[i]
+	i = i + 1
+	ENDWHILE
+END PrintArrayContents
+
+
+BEGIN FindMAX(inputArray)
+  let MaxIndex = 1
+  let Max = inarray[i]
+  let i = 1
+  WHILE i < NumElements in InputArray
+  IF inputArray[i] > Max
+    Let Max = inputArray[i]
+	let Maxindex = i
+  ENDIF
+  i = i + 1
+  ENDWHILE
+  Display “The highest value is ” Max “ at position ” MaxIndex
+  return [Max, Maxindex]
+END FindMAX
+	
